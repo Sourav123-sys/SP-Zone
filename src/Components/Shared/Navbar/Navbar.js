@@ -28,9 +28,12 @@ const Navbar = () => {
                 {open ? <ImCross className="h-4 w-4 ml-2"></ImCross> : <IoMdMenu className="h-6 w-6 ml-2"></IoMdMenu>}
             </div>
 
-            <ul className={` w-full text-lg py-2 md:flex md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14" : "top-[-200px]"}`}>
+
+            <div className='flex items-center'>
+                
+            <ul className={` w-full md:w-2/3 text-lg py-2 md:flex items-center md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14" : "top-[-200px]"}`}>
                 <div className="logo hidden md:block">
-                 <h1 className='cursor-pointer sp-style' onClick={() => navigate('/')}><span  className="text-6xl">sp</span><span className="text-xl">zone</span></h1>   
+                 <h1 className='cursor-pointer -mt-5 sp-style' onClick={() => navigate('/')}><span  className="text-8xl">sp</span><span className="text-xl">zone</span></h1>   
                 </div>
                 <div className="items md:flex">
                     <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
@@ -46,10 +49,18 @@ const Navbar = () => {
 
 
 
-<li className='mt-2 font-black'>Name: {user? user.displayName : "Login-first"}</li>
+
+                </div>
+                </ul>
+                
+                <div className=' flex w-48 items-center absolute top-0 right-0 md:static'>
+                <p className=' font-black '>Name: {user? user.displayName : "Login-first"}</p>
            <img className="w-10 h-10 rounded-full  ml-3"src={userImg} alt='' />
                 </div>
-            </ul>
+            
+            </div>
+           
+           
         </nav>
     );
 };
