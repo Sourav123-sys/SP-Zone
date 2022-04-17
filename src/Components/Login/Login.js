@@ -1,8 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { auth } from '../../firebase.init';
 import googleLogo from '../../s1AjSxph_400x400.jpg'
-
+import { ToastContainer, toast } from 'react-toastify';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword,useSignInWithGithub,useSignInWithGoogle} from 'react-firebase-hooks/auth';
 const Login = () => {
+
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [signInWithGoogle, name] = useSignInWithGoogle(auth)
+    const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
+    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(
+        auth
+      );
+
+      const [
+        signInWithEmailAndPassword,
+        user,
+      loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const handleEmailBlur = e => {
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordBlur = e => {
+        setPassword(e.target.value);
+
+    }
+    const handleUserSignIn = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(email,password);
+
+    }
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+    if (user || user1) {
+        navigate(from,{replace:true})
+    }
+    let errorMsg;
+    if (error || error || error2) {
+    errorMsg = <p className='text-red-700'>Error : {error?.message} {error1?.message} {error2?.message}</p>;
+    }
+
+
+
+
+
+    
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Login to Continue</h1>

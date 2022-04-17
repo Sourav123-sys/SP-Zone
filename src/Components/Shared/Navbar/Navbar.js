@@ -2,9 +2,25 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ImCross } from 'react-icons/im';
 import { IoMdMenu } from 'react-icons/io'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
+import image from '../../../no-image.png'
 const Navbar = () => {
+    const [user] = useAuthState(auth)
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
+
+    const logout = () => {
+        signOut(auth);
+    };
+    console.log(user)
+    
+
+    const avater = image
+    const userImg = user?.photoURL ? user?.photoURL : avater;
+
+
     return (
         <nav className=" text-black py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
@@ -20,7 +36,18 @@ const Navbar = () => {
                     <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/services">Services</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/about">About</Link></li>
-                    <li className='p-2 md:mx-2 font-medium'><Link to="/contact">Sign Out</Link></li>
+
+                    {
+                        user ? 
+                            <li style={{cursor:'pointer'}}className='p-2 md:mx-2 font-medium' onClick={logout}>Sign Out</li>
+                            
+                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 font-medium'><Link to="/login">Sign In</Link></li>
+            }
+
+
+
+<li className='mt-2 font-black'>Name: {user? user.displayName : "Login-first"}</li>
+           <img className="w-10 h-10 rounded-full  ml-3"src={userImg} alt='' />
                 </div>
             </ul>
         </nav>
