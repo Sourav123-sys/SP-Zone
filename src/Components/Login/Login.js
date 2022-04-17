@@ -15,7 +15,7 @@ const Login = () => {
     const [signInWithGoogle, name] = useSignInWithGoogle(auth)
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
     const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(
-        auth
+        auth,{sendEmailVerification:true}
       );
 
       const [
