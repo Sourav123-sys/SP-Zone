@@ -9,7 +9,7 @@ const SingleService = (props) => {
             <div className="max-w-sm  rounded-lg border text-center">
                 <img className="rounded-t-lg w-2/3 mx-auto" src={img} alt="" />
                 <div className="p-5">
-                    <h1 className='font-bold'> Exercise Name: {name}</h1>
+                    <h1 className='font-bold'> Package Name: {name}</h1>
 
                     <p className="mb-3 font-normal pt-5 text-gray-700 dark:text-gray-400"><span className='font-bold'>Benefits:</span>    {details} </p>
                     <p><span className='font-bold'>Price:</span> BDT, {price}/-</p>

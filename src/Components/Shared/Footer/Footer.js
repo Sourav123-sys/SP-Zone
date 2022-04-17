@@ -74,7 +74,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between">
-                    <span className="text-sm text-gray-300 sm:text-center">© 2022 <Link to="https://www.facebook.com/profile.php?id=100013452185380">Ivent™</Link>. All Rights Reserved.
+                    <span className="text-sm text-gray-300 sm:text-center">© 2022 <Link to="https://www.facebook.com/profile.php?id=100013452185380"><span className='text-2xl'>Sp</span>Zone</Link>. All Rights Reserved.
                     </span>
                     <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
                         <Link to="#" className="text-gray-400 hover:text-white">

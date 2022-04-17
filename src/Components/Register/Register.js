@@ -35,6 +35,8 @@ const fullName=firstName+' '+lastName
     const [signInWithGoogle, name] = useSignInWithGoogle(auth)
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
     const [updateProfile, updating, error3] = useUpdateProfile(auth);
+   
+   
     const handleEmailBlur = e => {
         setEmail(e.target.value);
     }
@@ -52,6 +54,7 @@ const fullName=firstName+' '+lastName
         console.log(e.target.value)
     }
     const navigate = useNavigate()
+
     const handleCreateUser = async e => {
         e.preventDefault();
         if (password.length < 6) {
@@ -64,11 +67,13 @@ const fullName=firstName+' '+lastName
             return;
         }
 
-      
+        toast('Profile create successfully');
            await createUserWithEmailAndPassword(email, password)
            await updateProfile({ displayName : fullName, });
-           toast('Profile create successfully');
-           navigate('/')
+        if (user) {
+            navigate('/')
+          }
+           
      
     }
  // react-firebase-hooks
@@ -85,6 +90,10 @@ const fullName=firstName+' '+lastName
 
     const handleFacebookSignIn = () => {
         console.log("fb coming....");
+    }
+    let errorMsg;
+    if (error || error1 || error3) {
+    errorMsg = <p className='text-red-700'>Error : {error?.message} {error1?.message} {error3?.message}</p>;
     }
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
@@ -179,9 +188,20 @@ const fullName=firstName+' '+lastName
                     <label htmlFor="floating_repeat_password" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
                 </div>
 
-                <button type="submit" className="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                <div className="flex items-center h-5 mb-5">
+
+                    <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                    <div className="ml-3 text-sm ">
+      <label htmlFor="terms" className="font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
+                </div>
+           </div>
+   
+                
+
+                <button  type="submit" className="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
             </form>
             <p style={{ color: 'red' }}>{error} {error3?.message}</p>
+            {errorMsg}
                 {
 
                     loading && <p>Loading...</p>
@@ -206,7 +226,7 @@ const fullName=firstName+' '+lastName
             <div className="text-center ">
                 <button onClick={handleFacebookSignIn}className='flex w-100 mt-5 bg-sky-900 items-center mx-auto google-button rounded google-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
             </div>
-<ToastContainer/>
+  <ToastContainer/>
         </div>
     );
 };

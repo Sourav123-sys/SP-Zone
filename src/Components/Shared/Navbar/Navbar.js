@@ -37,15 +37,16 @@ const Navbar = () => {
                  <h1 className='cursor-pointer -mt-5 sp-style' onClick={() => navigate('/')}><span  className="text-8xl">sp</span><span className="text-xl">zone</span></h1>   
                 </div>
                 <div className="items md:flex">
-                        <li className='p-2 md:mx-2 text-green-500 font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/blog">Blog</CustomLink></li>
-                    <li className='p-2 md:mx-2 text-green-500  font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/services">Services</CustomLink></li>
-                    <li className='p-2 md:mx-2 text-green-500  font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/about">About</CustomLink></li>
+                        <li className='p-2 md:mx-2 li-style text-black font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/">Home</CustomLink></li>
+                        <li className='p-2 md:mx-2 li-style text-black font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/blog">Blog</CustomLink></li>
+                    <li className='p-2 md:mx-2 li-style text-black  font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/services">Services</CustomLink></li>
+                    <li className='p-2 md:mx-2 li-style text-black  font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/about">About</CustomLink></li>
 
                     {
                         user ? 
                             <li style={{cursor:'pointer'}}className='p-2 md:mx-2  text-red-500 font-medium' onClick={logout}>Sign Out</li>
                             
-                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 text-blue-500 font-medium'><Link to="/login">Sign In</Link></li>
+                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 text-blue-700 font-medium'><Link to="/login">Sign In</Link></li>
             }
 
 

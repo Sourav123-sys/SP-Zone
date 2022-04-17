@@ -67,3 +67,16 @@
   height: 100%;
   object-fit: cover;
 }
+
+
+@media screen and (max-width: 768px) {
+  nav li {
+    background-color: black;
+    color:white;
+    
+  }
+  .li-style{
+    color:white;
+  }
+}
+  

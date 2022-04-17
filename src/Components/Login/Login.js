@@ -17,7 +17,7 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(
         auth,{sendEmailVerification:true}
       );
-
+    
       const [
         signInWithEmailAndPassword,
         user,
@@ -46,7 +46,7 @@ const Login = () => {
         navigate(from,{replace:true})
     }
     let errorMsg;
-    if (error || error || error2) {
+    if (error || error1 || error2) {
     errorMsg = <p className='text-red-700'>Error : {error?.message} {error1?.message} {error2?.message}</p>;
     }
 
@@ -117,7 +117,7 @@ const Login = () => {
                 <button onClick={handleGoogleSignIn} className='flex items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p className='ml-5 text-lg'>Signin with Google</p></button>
             </div>
             <div className="text-center ">
-                <button onClick={()=> signInWithGithub()}className='flex w-100 bg-black mt-5 items-center mx-auto google-button rounded google-sign'><img className='w-20 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with GitHub</p></button>
+                <button onClick={()=> signInWithGithub()}className='flex w-100 bg-black mt-5 items-center mx-auto google-button rounded google-sign'><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with GitHub</p></button>
             </div>
             <div className="text-center ">
                 <button onClick={handleFacebookSignIn}className='flex w-100 mt-5 bg-sky-900 items-center mx-auto google-button rounded google-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
