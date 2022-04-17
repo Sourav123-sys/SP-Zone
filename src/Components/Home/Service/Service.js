@@ -4,7 +4,7 @@ import SingleService from '../singleService/SingleService';
 
 const Service = () => {
     const [services] = useService()
-    console.log(services,'serv')
+    // console.log(services,'serv')
     return (
         <div>
              <div className='mt-28'>

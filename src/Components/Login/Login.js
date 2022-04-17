@@ -113,14 +113,14 @@ const Login = () => {
                 <div className="middle mx-4 text-lg">or</div>
                 <div className="bottom"></div>
             </div>
-            <div className="text-center">
-                <button onClick={handleGoogleSignIn} className='flex items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p className='ml-5 text-lg'>Signin with Google</p></button>
+            <div className="text-center sign">
+                <button onClick={handleGoogleSignIn} className='flex sign items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p className='ml-5 text-lg'>Signin with Google</p></button>
             </div>
             <div className="text-center ">
-                <button onClick={()=> signInWithGithub()}className='flex w-100 bg-black mt-5 items-center mx-auto google-button rounded google-sign'><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with GitHub</p></button>
+                <button onClick={()=> signInWithGithub()}className='flex sign w-100 bg-black mt-5 items-center mx-auto google-button rounded google-sign'><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with GitHub</p></button>
             </div>
             <div className="text-center ">
-                <button onClick={handleFacebookSignIn}className='flex w-100 mt-5 bg-sky-900 items-center mx-auto google-button rounded google-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
+                <button onClick={handleFacebookSignIn}className='flex sign w-100 mt-5 bg-sky-900 items-center mx-auto google-button rounded google-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
             </div>
             <ToastContainer />
         </div>
