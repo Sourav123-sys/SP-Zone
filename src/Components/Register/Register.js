@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import googleLogo from '../../s1AjSxph_400x400.jpg'
 import { auth } from '../../firebase.init';
-
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 
     const [email, setEmail] = useState(' ')
@@ -113,9 +113,9 @@ console.log(firstName+' '+lastName);
                 <div className="bottom"></div>
             </div>
             <div className="text-center">
-                <button className='flex items-center mx-auto google-button rounded-lg'><img className='w-10 h-10 rounded-full mr-3' src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
+                <button className='flex items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3' src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
             </div>
-
+<ToastContainer/>
         </div>
     );
 };
