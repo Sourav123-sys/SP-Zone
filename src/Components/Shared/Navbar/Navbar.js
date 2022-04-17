@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import image from '../../../no-image.png'
+import CustomLink from '../../CustomLink/CustomLink';
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const [open, setOpen] = useState(false);
@@ -36,9 +37,9 @@ const Navbar = () => {
                  <h1 className='cursor-pointer -mt-5 sp-style' onClick={() => navigate('/')}><span  className="text-8xl">sp</span><span className="text-xl">zone</span></h1>   
                 </div>
                 <div className="items md:flex">
-                    <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
-                    <li className='p-2 md:mx-2 font-medium'><Link to="/services">Services</Link></li>
-                    <li className='p-2 md:mx-2 font-medium'><Link to="/about">About</Link></li>
+                    <li className='p-2 md:mx-2 font-medium'><CustomLink to="/blog">Blog</CustomLink></li>
+                    <li className='p-2 md:mx-2 font-medium'><CustomLink to="/services">Services</CustomLink></li>
+                    <li className='p-2 md:mx-2 font-medium'><CustomLink to="/about">About</CustomLink></li>
 
                     {
                         user ? 
