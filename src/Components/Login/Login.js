@@ -5,7 +5,8 @@ import googleLogo from '../../s1AjSxph_400x400.jpg'
 import { ToastContainer, toast } from 'react-toastify';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword,useSignInWithGithub,useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import 'react-toastify/dist/ReactToastify.css';
-
+import githubLogo from '../../github-mark.png'
+import fbLogo from '../../fbpng.png'
 const Login = () => {
 
 
@@ -69,19 +70,21 @@ const Login = () => {
        }
     }
 
-
+    const handleFacebookSignIn = () => {
+    console.log("fb coming...");
+}
     
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Login to Continue</h1>
             <form onSubmit={handleUserSignIn}>
-                <div class="relative z-0 mb-6 w-full group">
-                    <input onBlur={handleEmailBlur} type="email" name="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" />
-                    <label for="floating_email" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                <div className="relative z-0 mb-6 w-full group">
+                    <input onBlur={handleEmailBlur} type="email" name="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" />
+                    <label htmlFor="floating_email" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
                 </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <input onBlur={handlePasswordBlur} type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" />
-                    <label for="floating_password" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                <div className="relative z-0 mb-6 w-full group">
+                    <input onBlur={handlePasswordBlur} type="password" name="floating_password" id="floating_password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" />
+                    <label htmlFor="floating_password" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
                 </div>
                 {errorMsg}
                     
@@ -93,7 +96,7 @@ const Login = () => {
                     {
                         sending &&<p>sending...</p>
                     }
-                <button type="submit" class="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                <button type="submit" className="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
             </form>
             <p className="mt-5">
 
@@ -112,6 +115,12 @@ const Login = () => {
             </div>
             <div className="text-center">
                 <button onClick={handleGoogleSignIn} className='flex items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p className='ml-5 text-lg'>Signin with Google</p></button>
+            </div>
+            <div className="text-center ">
+                <button onClick={()=> signInWithGithub()}className='flex w-100 bg-black mt-5 items-center mx-auto google-button rounded google-sign'><img className='w-20 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with GitHub</p></button>
+            </div>
+            <div className="text-center ">
+                <button onClick={handleFacebookSignIn}className='flex w-100 mt-5 bg-sky-900 items-center mx-auto google-button rounded google-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
             </div>
             <ToastContainer />
         </div>

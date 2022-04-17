@@ -1,6 +1,10 @@
 .sp-style{
   font-family: 'Times New Roman', Times, serif;
 }
+.serv-head{
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
 .custom-shadow{
   box-shadow: 4px 4px 8px rgb(189,200,213),-4px -4px 8px rgb(255,255,255);
 }

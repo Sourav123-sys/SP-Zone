@@ -26,7 +26,7 @@ const Navbar = () => {
         <nav className=" text-black py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
 
-                {open ? <ImCross className="h-4 w-4 ml-2"></ImCross> : <IoMdMenu className="h-6 w-6 ml-2"></IoMdMenu>}
+                {open ? <ImCross className="h-4 w-4 ml-2 text-black"></ImCross> : <IoMdMenu className="text-black h-6 w-6 ml-2"></IoMdMenu>}
             </div>
 
 
@@ -37,15 +37,15 @@ const Navbar = () => {
                  <h1 className='cursor-pointer -mt-5 sp-style' onClick={() => navigate('/')}><span  className="text-8xl">sp</span><span className="text-xl">zone</span></h1>   
                 </div>
                 <div className="items md:flex">
-                    <li className='p-2 md:mx-2 font-medium'><CustomLink to="/blog">Blog</CustomLink></li>
-                    <li className='p-2 md:mx-2 font-medium'><CustomLink to="/services">Services</CustomLink></li>
-                    <li className='p-2 md:mx-2 font-medium'><CustomLink to="/about">About</CustomLink></li>
+                        <li className='p-2 md:mx-2 text-green-500 font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/blog">Blog</CustomLink></li>
+                    <li className='p-2 md:mx-2 text-green-500  font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/services">Services</CustomLink></li>
+                    <li className='p-2 md:mx-2 text-green-500  font-medium'><CustomLink style={ {borderBottom:"2px solid red"}}to="/about">About</CustomLink></li>
 
                     {
                         user ? 
-                            <li style={{cursor:'pointer'}}className='p-2 md:mx-2 font-medium' onClick={logout}>Sign Out</li>
+                            <li style={{cursor:'pointer'}}className='p-2 md:mx-2  text-red-500 font-medium' onClick={logout}>Sign Out</li>
                             
-                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 font-medium'><Link to="/login">Sign In</Link></li>
+                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 text-blue-500 font-medium'><Link to="/login">Sign In</Link></li>
             }
 
 
