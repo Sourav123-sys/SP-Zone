@@ -220,12 +220,12 @@ const Register = () => {
                 Already Have an Account ?<span className='text-blue-800 h-2 w-2  ml-2 p-2 rounded '><Link className='form-link ' to='/login'>Go To Login</Link></span> 
 
             </p>
-            <div className="flex items-center my-8">
-                <div className="top"></div>
-                <div className="middle mx-4 text-lg">or</div>
-                <div className="bottom"></div>
-            </div>
-            <div className="text-center">
+            <div className='or-style'>
+                <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginRight: '20px'}} className='w-50 mt-2'></div>
+                <p className='mt-2 px-2'> or </p>
+                <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginLeft: '20px'}} className=' w-50 mt-2'></div>
+                </div>
+            <div className="text-center mt-5">
                 <button onClick={handleGoogleSignIn}className='flex sign items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3' src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
             </div>
             <div className="text-center ">
