@@ -23,7 +23,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className=" text-black py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
+        <nav className=" text-black py-4 md:py-1  absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
 
                 {open ? <ImCross className="h-4 w-4 ml-2 text-black"></ImCross> : <IoMdMenu className="text-black h-6 w-6 ml-2"></IoMdMenu>}

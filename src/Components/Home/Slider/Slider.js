@@ -22,7 +22,7 @@ import banner5 from '../../../banner-5.jpg'
 import banner6 from '../../../banner-6.jpg'
 const Slider = () => {
     return (
-        <div className='slider-body'>
+        <div className='slider-body '>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
