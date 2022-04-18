@@ -6,7 +6,7 @@ const SingleService = (props) => {
     return (
         <div className='custom-shadow py-10 rounded-md'>
 
-            <div className="max-w-sm  rounded-lg border text-center">
+            <div style={{border:"none"}}className="max-w-sm  rounded-lg border text-center">
                 <img className="rounded-t-lg w-2/3 mx-auto" src={img} alt="" />
                 <div className="p-5">
                     <h1 className='font-bold'> Package Name: {name}</h1>
