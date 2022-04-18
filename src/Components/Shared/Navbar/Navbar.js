@@ -7,6 +7,8 @@ import { auth } from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import image from '../../../no-image.png'
 import CustomLink from '../../CustomLink/CustomLink';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignIn, faSignOut } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const [open, setOpen] = useState(false);
@@ -29,7 +31,7 @@ const Navbar = () => {
                 {open ? <ImCross className="h-4 w-4 ml-2 text-black"></ImCross> : <IoMdMenu className="text-black h-6 w-6 ml-2"></IoMdMenu>}
             </div>
 
-
+            
             <div className='flex items-center'>
                 
             <ul className={` w-full md:w-2/3 text-lg py-2 md:flex items-center md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14" : "top-[-250px]"}`}>
@@ -44,9 +46,9 @@ const Navbar = () => {
 
                     {
                         user ? 
-                            <li style={{cursor:'pointer'}}className='p-2 md:mx-2  text-red-500 font-medium' onClick={logout}>Sign Out</li>
+                            <li style={{cursor:'pointer'}}className='p-2 md:mx-2  text-red-500 font-medium' onClick={logout}>Sign Out <FontAwesomeIcon icon={faSignOut} /></li>
                             
-                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 text-blue-700 font-medium'><Link to="/login">Sign In</Link></li>
+                            :   <li style={{cursor:'pointer'}}className='p-2 md:mx-2 text-blue-700 font-medium'><Link to="/login">Sign In <FontAwesomeIcon icon={faSignIn} /></Link></li>
             }
 
 
