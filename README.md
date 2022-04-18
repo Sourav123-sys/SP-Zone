@@ -18,7 +18,7 @@ Live site : [SP_ZONE](https://sp-zone-aac4d.web.app/).
 * React-firebase-hooks
 * React-toastify
 * Swiper js
-8 Tailwind css
+* Tailwind css
 
 
 

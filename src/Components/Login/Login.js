@@ -7,10 +7,9 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword,useSignInWithG
 import 'react-toastify/dist/ReactToastify.css';
 import githubLogo from '../../github-mark.png'
 import fbLogo from '../../fbpng.png'
-import {  signInWithPopup,FacebookAuthProvider } from "firebase/auth";
 const Login = () => {
 
-    const [userFB,setUser]=useState({})
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [signInWithGoogle, name] = useSignInWithGoogle(auth)
@@ -43,7 +42,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
-    if (user || user1 || userFB) {
+    if (user || user1) {
         navigate(from,{replace:true})
     }
     let errorMsg;
@@ -71,33 +70,9 @@ const Login = () => {
        }
     }
 
-    const facebookProvider = new FacebookAuthProvider();
     const handleFacebookSignIn = () => {
-        signInWithPopup(auth, facebookProvider)
-  .then((result) => {
-    // The signed-in user info.
-    const user = result.user;
-    //console.log(user)
-    setUser(user)
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    // const credential = FacebookAuthProvider.credentialFromResult(result);
-    // const accessToken = credential.accessToken;
-
-    // ...
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    console.log(error);
-    // const errorCode = error.code;
-    // const errorMessage = error.message;
-    // // The email of the user's account used.
-    // const email = error.email;
-    // // The AuthCredential type that was used.
-    // const credential = FacebookAuthProvider.credentialFromError(error);
-
-    // ...
-  });
-    }
+    console.log("fb coming...");
+}
     
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
