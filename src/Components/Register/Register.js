@@ -10,6 +10,7 @@ import { auth } from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from "react-hook-form";
+import {  signInWithPopup,FacebookAuthProvider } from "firebase/auth";
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors },trigger } = useForm();
     // const [email, setEmail] = useState(' ')
@@ -20,7 +21,7 @@ const Register = () => {
     // const [error, setError] = useState('')
     const [show, setShow] = useState(false)
     const [conshow, setConShow] = useState(false)
-
+    const [userFB,setUser]=useState({})
     const [
         createUserWithEmailAndPassword,
         user,
@@ -69,16 +70,39 @@ const Register = () => {
  // react-firebase-hooks
 
 
-    
+ 
  const handleGoogleSignIn = () =>{
     signInWithGoogle()
     .then( () =>{
         navigate(from, {replace: true})
     })
     }
-
+    const facebookProvider = new FacebookAuthProvider();
     const handleFacebookSignIn = () => {
-        console.log("fb coming....");
+        signInWithPopup(auth, facebookProvider)
+  .then((result) => {
+    // The signed-in user info.
+    const user = result.user;
+    //console.log(user)
+    setUser(user)
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    // const credential = FacebookAuthProvider.credentialFromResult(result);
+    // const accessToken = credential.accessToken;
+
+    // ...
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    console.log(error);
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    // // The email of the user's account used.
+    // const email = error.email;
+    // // The AuthCredential type that was used.
+    // const credential = FacebookAuthProvider.credentialFromError(error);
+
+    // ...
+  });
     }
     let errorMsg;
     if ( error1 || error3) {
