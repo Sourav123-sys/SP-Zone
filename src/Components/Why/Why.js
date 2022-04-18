@@ -3,7 +3,7 @@ import React from 'react';
 const Why = () => {
     return (
         <div>
-             <div style={{margin:"10%"}}className="custom-shadow">
+             <div style={{margin:"10%"}}className="custom-shadow ">
             
             <h1 className='text-4xl pt-10 sp-style text-center mt-5' > <span className='text-6xl text-red-500 '>Why</span> Me?
              </h1>

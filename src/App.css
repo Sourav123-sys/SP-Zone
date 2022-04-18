@@ -73,6 +73,10 @@
   align-items: center;
   
 }
+.not{
+  margin-top:10%;
+  width:100%
+}
 @media screen and (max-width: 768px) {
   nav li {
     background-color: black;
@@ -90,5 +94,6 @@
   .slider-body{
     margin-top:10%;
   }
+
 }
   
