@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase.init';
-import googleLogo from '../../s1AjSxph_400x400.jpg'
+import googleLogo from '../../Google__.svg.png'
 import { ToastContainer, toast } from 'react-toastify';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword,useSignInWithGithub,useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import 'react-toastify/dist/ReactToastify.css';
-import githubLogo from '../../github-mark.png'
-import fbLogo from '../../fbpng.png'
+import githubLogo from '../../GitHub-Logo.wine.svg'
+import fbLogo from '../../Facebook_i.svg.png'
 const Login = () => {
 
 
@@ -117,13 +117,13 @@ const Login = () => {
 
 
             <div className="text-center sign mt-5">
-                <button onClick={handleGoogleSignIn} className='flex sign items-center mx-auto google-button rounded-lg google-sign'><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p className='ml-5 text-lg'>Signin with Google</p></button>
+                <button onClick={handleGoogleSignIn} className='flex sign bg-amber-400 items-center mx-auto google-button rounded-lg '><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p style={{paddingRight:'30px'}}className='ml-5 text-lg text-black'>Signin with Google</p></button>
             </div>
             <div className="text-center ">
-                <button onClick={()=> signInWithGithub()}className='flex sign w-100 bg-black mt-5 items-center mx-auto google-button rounded google-sign'><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with GitHub</p></button>
+                <button onClick={()=> signInWithGithub()}className='flex sign w-100 bg-white mt-5 items-center mx-auto google-button rounded '><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2  text-lg' style={{paddingRight:'30px'}}>Signin with GitHub</p></button>
             </div>
             <div className="text-center ">
-                <button onClick={handleFacebookSignIn}className='flex sign w-100 mt-5 bg-sky-900 items-center mx-auto google-button rounded google-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
+                <button style={{ backgroundColor: '#3B5998' }} onClick={handleFacebookSignIn} className='flex sign w-100 mt-5  items-center mx-auto google-button rounded facebook-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p style={{paddingRight:'30px'}}className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
             </div>
             <ToastContainer />
         </div>

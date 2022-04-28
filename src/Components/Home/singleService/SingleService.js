@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleService = (props) => {
-    const { name, img, details, price,Duration } = props.service;
+    const { id,name, img, details, price,Duration } = props.service;
     return (
         <div className='custom-shadow py-10 rounded-md'>
 

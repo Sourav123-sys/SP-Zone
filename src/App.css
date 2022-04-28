@@ -16,6 +16,12 @@
   height: 100%;
 
 }
+.facebook-sign{
+
+}
+.active{
+  border-bottom: 2px solid red;
+}
 .hoverStyle:hover{
      border-bottom: 1px solid red;
 }
@@ -79,18 +85,15 @@
 }
 @media screen and (max-width: 768px) {
   nav li {
-    background-color: black;
+    background-color: #424242;
+    
     color:white;
     
   }
   .li-style{
     color:white;
   }
-  .sign{
-  margin-left: 10%;
-    width:80%;
-    
-  }
+ 
   .slider-body{
     margin-top:10%;
   }
