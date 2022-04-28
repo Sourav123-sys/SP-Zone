@@ -19,7 +19,7 @@ const Account = () => {
       <div >
                         {
                             user ? <h1 className='font-bold mt-5 text-center text-2xl sp-style'>Name: {user?.displayName}</h1>
-                                :       <h1 className='font-bold mt-5 text-center text-2xl sp-style'>Name:Login-First</h1>
+                                :       <h1 className='font-bold mt-5 text-center text-2xl sp-style'>Name: Login-First</h1>
 }
                         {
                             user ? <h1 className='font-bold mt-5 text-center text-2xl sp-style'>Email: {user?.email}</h1>

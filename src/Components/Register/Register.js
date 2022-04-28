@@ -250,7 +250,7 @@ const Register = () => {
                 <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginLeft: '20px'}} className=' w-50 mt-2'></div>
                 </div>
                 <div className="text-center sign mt-5">
-                <button onClick={handleGoogleSignIn} className='flex sign bg-amber-400 items-center mx-auto google-button rounded-lg '><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p style={{paddingRight:'30px'}}className='ml-5 text-lg text-black'>Signin with Google</p></button>
+                <button onClick={handleGoogleSignIn} className='flex sign bg-amber-400 items-center mx-auto google-button rounded '><img className='w-10 h-10 rounded-full mr-3 ' src={googleLogo} alt="" /><p style={{paddingRight:'30px'}}className='ml-5 text-lg text-black'>Signin with Google</p></button>
             </div>
             <div className="text-center ">
                 <button onClick={()=> signInWithGithub()}className='flex sign w-100 bg-white mt-5 items-center mx-auto google-button rounded '><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2  text-lg' style={{paddingRight:'30px'}}>Signin with GitHub</p></button>
