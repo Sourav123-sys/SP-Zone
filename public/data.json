@@ -20,7 +20,7 @@
       "img": "https://i.ibb.co/5vdDJxP/servies-3.jpg",
       "name": "Shoulder-workout",
       "Duration" : "6months",
-      "details": "By doing exercise,your shoulder move into a amazing shape ",
+      "details": "By doing this exercise,your shoulder move into a amazing shape ",
       "price": 12000
     },
     {
@@ -28,7 +28,7 @@
       "img": "https://i.ibb.co/r52qqdJ/services-5.jpg",
       "name": "Legs-Workout",
       "Duration" : "12months",
-      "details": "This workout gives your a amazing legs",
+      "details": "This workout gives you a amazing legs",
       "price": 3000 
     },
     {
@@ -36,7 +36,7 @@
       "img": "https://i.ibb.co/3dsL6jV/ser-6.png",
       "name": "Chest-Workout",
       "Duration" : "6months",
-      "details": "This workout gives your a amazing chest shape",
+      "details": "This workout gives you a amazing chest shape",
       "price": 15000    
     }
  
